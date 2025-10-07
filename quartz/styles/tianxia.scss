@@ -1,0 +1,178 @@
+/* DKJ-inspired minimalist blog style: tan background, sans-serif text, link lists */
+:root {
+  --bg: #eddbbe;          /* warm tan */
+  --paper: #f5efdf;       /* lighter tan for content blocks (optional) */
+  --ink: #111;
+  --link: #0033cc;
+  --visited: #551a8b;
+  --muted: #444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 2rem 0;
+  background: var(--bg);
+  background-image: url('/static/background-pattern.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  background-position: top left;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--visited);
+}
+
+/* Override Quartz container styles */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1.2rem 0 0.75rem;
+}
+
+h2, h3 {
+  margin-top: 1.25rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #d3c6ab;
+  margin: 1.5rem 0;
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+blockquote {
+  margin: 0.75rem 1rem;
+  padding: 0.25rem 1rem;
+  border-left: 3px solid #cbbca0;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+ul.tight > li {
+  margin: 0.2rem 0;
+}
+
+/* Optional content card (kept subtle) */
+.card {
+  background: var(--paper);
+  padding: 1rem;
+  border: 1px solid #e1d9c4;
+}
+
+/* Blog-specific styles */
+.blog-post {
+  margin-bottom: 2rem;
+}
+
+.blog-post header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.post-date {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post-content {
+  line-height: 1.6;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content p {
+  margin-bottom: 1rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.post-content code {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.post-content pre {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Override Quartz sidebar and navigation styles */
+.sidebar {
+  background: transparent !important;
+  border: none !important;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1.2rem 0 0.75rem;
+}
+
+/* Hide Quartz's default navigation elements we don't want */
+.search,
+.darkmode,
+.reader-mode,
+.explorer,
+.graph,
+.table-of-contents,
+.backlinks {
+  display: none !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 720px) {
+  html {
+    font-size: 17px;
+  }
+  
+  .header-meta {
+    position: static;
+    text-align: right;
+    padding: 0.5rem 1rem;
+  }
+}

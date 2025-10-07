@@ -1,3 +1,218 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Tianxia custom styles - DKJ-inspired minimalist blog style
+:root {
+  --bg: #eddbbe;          /* warm tan */
+  --paper: #f5efdf;       /* lighter tan for content blocks (optional) */
+  --ink: #111;
+  --link: #0033cc;
+  --visited: #551a8b;
+  --muted: #444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 2rem 0;
+  background: var(--bg) !important;
+  background-image: url('./static/background-pattern.svg') !important;
+  background-repeat: repeat !important;
+  background-size: 200px 200px !important;
+  background-position: top left !important;
+  color: var(--ink) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  line-height: 1.55 !important;
+}
+
+a {
+  color: var(--link) !important;
+  text-decoration: underline !important;
+}
+
+a:visited {
+  color: var(--visited) !important;
+}
+
+/* Override Quartz container styles */
+.container {
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  padding: 1.25rem 1rem !important;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem !important;
+  text-align: center !important;
+  margin: 1.2rem 0 0.75rem !important;
+}
+
+h2, h3 {
+  margin-top: 1.25rem !important;
+}
+
+hr {
+  border: none !important;
+  border-top: 1px solid #d3c6ab !important;
+  margin: 1.5rem 0 !important;
+}
+
+.small {
+  font-size: 0.9rem !important;
+}
+
+blockquote {
+  margin: 0.75rem 1rem !important;
+  padding: 0.25rem 1rem !important;
+  border-left: 3px solid #cbbca0 !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+ul.tight > li {
+  margin: 0.2rem 0 !important;
+}
+
+/* Optional content card (kept subtle) */
+.card {
+  background: var(--paper) !important;
+  padding: 1rem !important;
+  border: 1px solid #e1d9c4 !important;
+}
+
+/* Blog-specific styles */
+.blog-post {
+  margin-bottom: 2rem !important;
+}
+
+.blog-post header {
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+.post-date {
+  font-size: 0.9rem !important;
+  color: var(--muted) !important;
+  font-style: italic !important;
+}
+
+.post-content {
+  line-height: 1.6 !important;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.post-content p {
+  margin-bottom: 1rem !important;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.post-content code {
+  background: rgba(255, 255, 255, 0.5) !important;
+  padding: 0.2rem 0.4rem !important;
+  border-radius: 3px !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+}
+
+.post-content pre {
+  background: rgba(255, 255, 255, 0.5) !important;
+  padding: 1rem !important;
+  border-radius: 5px !important;
+  overflow-x: auto !important;
+  margin-bottom: 1rem !important;
+}
+
+.post-content pre code {
+  background: none !important;
+  padding: 0 !important;
+}
+
+/* Override Quartz sidebar and navigation styles */
+.sidebar {
+  background: transparent !important;
+  border: none !important;
+}
+
+.page-title {
+  text-align: center !important;
+  font-size: 2rem !important;
+  margin: 1.2rem 0 0.75rem !important;
+}
+
+/* Hide Quartz's default navigation elements we don't want */
+.search,
+.darkmode,
+.reader-mode,
+.explorer,
+.graph,
+.table-of-contents,
+.backlinks {
+  display: none !important;
+}
+
+/* Completely override Quartz's grid layout system */
+.page > #quartz-body {
+  display: block !important;
+  grid-template: none !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.page > #quartz-body .sidebar {
+  display: none !important;
+}
+
+.page > #quartz-body .center {
+  display: block !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page > #quartz-body .center > article {
+  display: block !important;
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  padding: 1.25rem 1rem !important;
+}
+
+.page > #quartz-body .page-header {
+  display: none !important;
+}
+
+.page > #quartz-body footer {
+  display: block !important;
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 720px) {
+  html {
+    font-size: 17px !important;
+  }
+  
+  .header-meta {
+    position: static !important;
+    text-align: right !important;
+    padding: 0.5rem 1rem !important;
+  }
+}
