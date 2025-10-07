@@ -166,6 +166,25 @@ ul.tight > li {
   display: none !important;
 }
 
+/* Disable popover functionality completely */
+.popover,
+.popover-hint,
+a.internal[data-no-popover="true"] {
+  display: none !important;
+}
+
+/* Remove any hover effects on internal links */
+a.internal {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  text-decoration: underline !important;
+}
+
+a.internal:hover {
+  background-color: transparent !important;
+}
+
 /* Completely override Quartz's grid layout system */
 .page > #quartz-body {
   display: block !important;

@@ -21,6 +21,18 @@ export const TianxiaScript: Emitter = () => {
                   const lm = document.lastModified || '';
                   last.textContent = lm ? lm : '';
                 }
+                
+                // Disable popover functionality
+                document.querySelectorAll('a.internal').forEach(link => {
+                  link.removeAttribute('data-no-popover');
+                  link.style.pointerEvents = 'auto';
+                });
+                
+                // Remove any popover event listeners
+                document.querySelectorAll('a.internal').forEach(link => {
+                  link.removeEventListener('mouseenter', () => {});
+                  link.removeEventListener('mouseleave', () => {});
+                });
               });
             `,
           },

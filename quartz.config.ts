@@ -12,7 +12,7 @@ const config: QuartzConfig = {
     pageTitle: "Zach's Tianxia Notebook",
     pageTitleSuffix: "",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false,
     analytics: {
       provider: "plausible",
     },
